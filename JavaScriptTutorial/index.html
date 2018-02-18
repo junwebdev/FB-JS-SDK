@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>JS</title>
+</head>
+<body>
+
+    <p id="demo"></p>
+    <p id="abc"></p>
+    <p id="typeOf"></p>
+    <p id="fullName"></p>
+
+
+    <!--Event Handler-->
+    <!--Event	    Description
+    onchange	An HTML element has been changed
+    onclick	    he user clicks an HTML element
+    onmouseover	The user moves the mouse over an HTML element
+    onmouseout	The user moves the mouse away from an HTML element
+    onkeydown	The user pushes a keyboard key
+    onload	    The browser has finished loading the page-->
+
+    <button onclick="document.getElementById('event').innerHTML=Date()">The time is? </button>
+    <p id="event"></p>
+
+    <button onclick="this.innerHTML = Date()">The current time is?</button>
+
+
+    <script>
+
+        //string add number & number add string
+        var x = 5;
+        var x;
+        x = 3;
+        var x = "5" + 2 + 3;
+        var y = 2 + 3 + "5";
+        // x = 6; I will not be executed
+        document.getElementById("demo").innerHTML = x;
+        document.getElementById("abc").innerHTML = y;
+
+        //typeof - find the datatype of varible
+        var person = { firstName: "John", lastName: "Doe", age: 50, eyeColor: "blue" };
+        document.getElementById('typeOf').innerHTML = typeof person.firstName;
+
+        //Function!!
+        function myFunction(p1, p2) {
+            return p1 + p2;
+        }
+
+        var callfunction = myFunction(1, 2);
+        document.getElementById("abc").innerHTML = myFunction(2, 3);
+
+        //Object!
+        var person = {
+            firstName: "John",
+            lastName: "Xie",
+            Id: "1111",
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            }
+
+        };
+
+        document.getElementById("fullName").innerHTML = person.fullName();
+
+
+
+
+
+    </script>
+
+
+    <script src="index.js"></script>
+</body>
+</html>

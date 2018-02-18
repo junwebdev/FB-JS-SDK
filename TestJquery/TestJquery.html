@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        .wrapper{
+            
+    
+            background-color:lightgray;
+            margin:0px auto;
+            position: center;
+        }
+
+        .seperate {
+            padding: 20px;
+        }
+
+        img.lazy {
+            width:700px;
+            height: 467px;
+            display: block;
+        }
+
+
+      
+
+    </style>
+    <title>Lazy Load</title>
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <div data-loader="ajax" data-src="TestJquery.html"></div>
+
+    <div class="wrapper">
+        <center>
+            <img class="lazy" data-src="Images/park.jpg" />
+
+            <img class="lazy" data-src="Images/bridge.jpg" />
+
+            <img class="lazy" data-src="Images/coast.jpg" />
+
+            <img class="lazy" data-src="Images/park.jpg" />
+
+            <img class="lazy" data-src="Images/bridge.jpg" />
+
+            <img class="lazy" data-src="Images/park.jpg" />
+
+            <img class="lazy" data-src="Images/bridge.jpg" />
+
+            <img class="lazy" data-src="Images/blog-3.jpg" />
+            <img class="lazy" data-src="Images/bridge.jpg" />
+            <img class="lazy" data-src="Images/blog-2.jpg" />
+            <img class="lazy" data-src="Images/person_1.jpg" />
+
+            <img class="lazy" data-src="Images/person_2.jpg" />
+            <img class="lazy" data-src="Images/person_3.jpg" />
+            <img class="lazy" data-src="Images/rails.jpg" />
+            <img class="lazy" data-src="Images/sky.jpg" />
+            <img class="lazy" data-src="Images/traffic.jpg" />
+            <img class="lazy" data-src="Images/tunnel.jpg" />
+        </center>
+
+
+
+    </div>
+
+
+
+    <script src="Scripts/jquery.lazy.min.js"></script>
+    <!--<script type="text/javascript" src="Scripts/jquery.lazy.min.js"></script>-->
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('lazy').Lazy({
+                scrollDirection: 'vertical',
+                effect: 'fadeIn',
+                visibleOnly: true,
+                onError: function (element) {
+                    console.log('error loading ' + element.data('src'));
+            });
+
+            $('.seperate').css('padding', '20px');
+        });
+
+
+    </script>
+
+    <!--<script src="Scripts/jquery-3.3.1.js"></script>
+    <script src="Scripts/jquery.lazyload.min.js"></script>-->
+
+</body>
+</html>
